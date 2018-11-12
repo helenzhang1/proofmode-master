@@ -1,0 +1,39 @@
+
+buildscript {
+    repositories {
+        google()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+        jcenter()
+
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven {
+            url "https://maven.google.com"
+        }
+        maven { url "https://raw.githubusercontent.com/guardianproject/gpmaven/master" }
+
+    }
+    project.ext {
+        // these are common variables used in */build.gradle
+        buildToolsVersion="27.0.3"
+        compileSdkVersion=27
+        minSdkVersion=15
+        targetSdkVersion=27
+        appcompat='com.android.support:appcompat-v7:27.0.2'
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,55 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
+
+    lintOptions {
+          abortOnError false
+     }
+
+    defaultConfig {
+        applicationId "org.witness.proofmode"
+        minSdkVersion 16
+        targetSdkVersion 27
+        versionCode 112
+        versionName "0.0.11-beta-2"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude 'org.bitcoin.production.checkpoints'
+        exclude 'org.bitcoin.test.checkpoints'
+        exclude 'org/bitcoinj/crypto/cacerts'
+        exclude 'org/bitcoinj/crypto/mnemonic/wordlist/english.txt'
+        exclude 'lib/x86_64/darwin/libscrypt.dylib'
+        exclude 'com/google/thirdparty/publicsuffix/PublicSuffixType.gwt.xml'
+        exclude 'com/google/thirdparty/publicsuffix/PublicSuffixPatterns.gwt.xml'
+        exclude 'com/google/thirdparty/publicsuffix/PublicSuffixPatterns.gwt.xml'
+        exclude 'org/apache/commons/cli/AlreadySelectedException.class'
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:27.1.1'
+    compile 'com.android.support:support-compat:27.1.1'
+    compile 'com.android.support:design:27.1.1'
+    implementation 'com.google.android.gms:play-services-safetynet:15.0.1'
+
+    compile 'com.github.paolorotolo:appintro:4.1.0'
+    compile "com.android.support:support-v4:27.1.1"
+    compile "com.android.support:support-v13:27.1.1"
+    compile 'com.jakewharton.timber:timber:4.5.1'
+    compile 'com.android.support:multidex:1.0.3'
+    compile project(':android-libproofmode')
+
+}

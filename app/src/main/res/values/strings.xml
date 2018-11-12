@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">ProofMode</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_share_key">Share Public Key...</string>
+    <string name="action_publish_key">Publish Public Key...</string>
+
+    <string name="action_about">About ProofMode</string>
+
+    <string name="switch_include_device">Include Device Identity</string>
+    <string name="switch_include_location">Include GPS Location</string>
+    <string name="switch_enable_proofmode">Enable ProofMode</string>
+    <string name="switch_auto_notarize">Enable Auto-Notarize</string>
+
+    <string name="intro1_title">Capture the Proof</string>
+    <string name="intro1_desc">You\'ve taken the first step to transform your photos and video into digital proof.</string>
+
+    <string name="intro2_title">Sensing Your World</string>
+    <string name="intro2_desc">ProofMode taps into all of the sensors on your device it can. Make sure to enable permissions as they are requested.</string>
+
+    <string name="intro3_title">Easy and Automatic</string>
+    <string name="intro3_desc">ProofMode is always running in the background, automatically adding proof to all photos and videos you take.</string>
+
+    <string name="intro4_title">Share Proof</string>
+    <string name="intro4_desc">When you need to share something with proof, just open the photo or video, and select SHARE PROOF from the Share menu.</string>
+    <string name="share_notarization">SHARE NOTARIZATION TO...</string>
+    <string name="share_proof">SHARE PROOF TO...</string>
+    <string name="proof_error_message">The proof does not exist</string>
+    <string name="last_modified">was last modified at</string>
+    <string name="has_hash">and has a SHA-256 hash of</string>
+    <string name="proof_signed">This proof is signed by PGP key 0x</string>
+    <string name="notarize_only">Share Notarization</string>
+    <string name="share_proof_only">Share Proof Metadata</string>
+    <string name="share_proof_with_media">Share Proof with Media</string>
+    <string name="open_public_key_page">Opening public key page</string>
+    <string name="no_external_storage">WARNING: ProofMode enabled, but there is no external storage available!</string>
+    <string name="no_hash_generated">ProofMode Alert: Unable to access media files</string>
+    <string name="generating_proof_notify">Generating proof...</string>
+    <string name="inspect_photos">Inspecting photos</string>
+    <string name="inspect_videos">Inspecting videos</string>
+    <string name="select_app">Select the app to share proof to...</string>
+    <string name="independent_notary">Independent notarization by Enigio TimeBeat at:</string>
+    <string name="packaging_proof">Packaging proof for sharing...</string>
+    <string name="view_public_key">View public key at: http://pgp.mit.edu/pks/lookup?search=0x</string>
+    <string name="include_mobile_network">Include Mobile Network</string>
+    <string name="share_proof_action">Share Proof</string>
+    <string name="action_generate">Generate Proof</string>
+    <string name="proof_error_message_final">We were unable to generate proof for this file.</string>
+</resources>
