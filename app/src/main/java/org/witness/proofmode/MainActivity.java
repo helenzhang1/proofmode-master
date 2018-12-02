@@ -22,6 +22,7 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
+
 import org.witness.proofmode.crypto.PgpUtils;
 import org.witness.proofmode.util.GPSTracker;
 
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i("hitCreate", "onCreate function has been called");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -126,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
+        Log.i("hitResume", "onResume function has been called");
         super.onResume();
 
         SwitchCompat switchProof = (SwitchCompat)findViewById(R.id.switchProof);

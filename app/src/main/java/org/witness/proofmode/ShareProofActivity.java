@@ -21,10 +21,13 @@ import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
+import android.util.Log;
+import android.graphics.Color;
 
 import org.witness.proofmode.crypto.HashUtils;
 import org.witness.proofmode.crypto.PgpUtils;
 import org.witness.proofmode.service.MediaWatcher;
+import com.ayush.imagesteganographylibrary.R;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -117,6 +120,30 @@ public class ShareProofActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /* @Override
+    public void onStartTextEncoding() {
+        //Whatever you want to do at the start of text encoding
+    }
+
+    @Override
+    public void onCompleteTextEncoding(ImageSteganography result) {
+
+        //After the completion of text encoding.
+
+        //result object is instantiated
+        this.result = result;
+
+        if (result != null && result.isEncoded()) {
+
+            //encrypted image bitmap is extracted from result object
+            encoded_image = result.getEncrypted_image();
+
+            //set text and image to the UI component.
+            textView.setText("Encoded");
+            imageView.setImageBitmap(encoded_image);
+        }
+    }*/
+
     public void generateProof (View button)
     {
 
@@ -163,18 +190,21 @@ public class ShareProofActivity extends AppCompatActivity {
 
     public void clickNotarize (View button)
     {
+        Log.d("notarize", "notarize function has been called");
         shareProof (false, false);
 
     }
 
     public void clickProof (View button)
     {
+        // Log.d("myTag", "this function has been called");
         shareProof (false, true);
 
     }
 
     public void clickAll (View button)
     {
+        Log.d("clickAll", "clickAll function has been called");
         shareProof (true, true);
 
     }
@@ -466,6 +496,7 @@ public class ShareProofActivity extends AppCompatActivity {
 
     private boolean shareProof (String mediaPath, ArrayList<Uri> shareUris, StringBuffer sb, PrintWriter fBatchProofOut, boolean shareMedia)
     {
+        // Log.d("myTag", "this function has been called");
 
         String hash = HashUtils.getSHA256FromFileContent(new File(mediaPath));
 
@@ -894,6 +925,7 @@ public class ShareProofActivity extends AppCompatActivity {
             try {
                 is = context.getContentResolver().openInputStream(uri);
                 Bitmap bmp = BitmapFactory.decodeStream(is);
+                // Encoding my image
                 return writeToTempImageAndGetPathUri(context, bmp).toString();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
@@ -908,9 +940,25 @@ public class ShareProofActivity extends AppCompatActivity {
         return null;
     }
 
+    // public static
+
     public static Uri writeToTempImageAndGetPathUri(Context inContext, Bitmap inImage) {
+        // Bitmap copy = inImage.copy(inImage.getConfig(), true);
+        /* int length = inImage.getWidth() * inImage.getHeight();
+        int[] array = new int[length];
+        inImage.getPixels(array,0,inImage.getWidth(),0,0,inImage.getWidth(),inImage.getHeight());
+        for (int i=0;i<length-(length/10);i++){
+            array[i] = Color.BLACK;
+        }
+
+        inImage.setPixels(array,0,inImage.getWidth(),0,0,inImage.getWidth(),inImage.getHeight());
+        boolean mut = inImage.isMutable();
+        Log.d("myTag", "Is inImage mutable? " + mut); */
+        //System.out.println("Is inImage mutable? " + mut);
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        // ImageSteganography imageSteganography = new ImageSteganography("hello world", "key", inImage);
         inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+        // String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
         String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
         return Uri.parse(path);
     }

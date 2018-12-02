@@ -8,9 +8,10 @@ android {
           abortOnError false
      }
 
+
     defaultConfig {
         applicationId "org.witness.proofmode"
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 27
         versionCode 112
         versionName "0.0.11-beta-2"
@@ -44,6 +45,7 @@ dependencies {
     compile 'com.android.support:support-compat:27.1.1'
     compile 'com.android.support:design:27.1.1'
     implementation 'com.google.android.gms:play-services-safetynet:15.0.1'
+    compile 'com.github.aagarwal1012:Image-Steganography-Library-Android:v1.0'
 
     compile 'com.github.paolorotolo:appintro:4.1.0'
     compile "com.android.support:support-v4:27.1.1"

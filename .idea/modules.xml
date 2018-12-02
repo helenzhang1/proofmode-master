@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ImageSteganographyLibrary/ImageSteganographyLibrary.iml" filepath="$PROJECT_DIR$/ImageSteganographyLibrary/ImageSteganographyLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/android-libproofmode/android-libproofmode.iml" filepath="$PROJECT_DIR$/android-libproofmode/android-libproofmode.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-opentimestamps/java-opentimestamps.iml" filepath="$PROJECT_DIR$/java-opentimestamps/java-opentimestamps.iml" />

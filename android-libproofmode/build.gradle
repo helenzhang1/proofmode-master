@@ -2,7 +2,6 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 27
-
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 27
@@ -23,7 +22,6 @@ android {
 }
 
 dependencies {
-
     implementation 'com.madgag.spongycastle:core:1.51.0.0'
     implementation 'com.madgag.spongycastle:pg:1.51.0.0'
     implementation 'com.madgag.spongycastle:pkix:1.51.0.0'
@@ -31,10 +29,9 @@ dependencies {
     implementation 'com.google.android.gms:play-services-safetynet:15.0.1'
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
     implementation 'com.jakewharton.timber:timber:4.5.1'
-
     implementation 'com.eternitywall:opentimestamps:0.1.14'
-
-
+    implementation project(':ImageSteganographyLibrary')
+    implementation 'com.github.aagarwal1012:Image-Steganography-Library-Android:v1.0'
 }
 
 apply plugin: 'maven'
